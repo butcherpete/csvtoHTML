@@ -1,0 +1,6 @@
+= Convert CSV to HTML
+
+== Resources
+* https://wickedev.com/javascript-to-parse-a-csv-file-and-convert-it-into-an-html-table/
+* https://sebhastian.com/javascript-csv-to-array/
+* https://gist.github.com/RandomEtc/1803645
