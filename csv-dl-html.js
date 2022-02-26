@@ -24,7 +24,7 @@ const dataStream = fs.createReadStream(inputPath)
 const parseStream = Papa.parse(Papa.NODE_STREAM_INPUT);
 dataStream.pipe(parseStream);
 
-//let writeStream = fs.createWriteStream("html/dl-output.txt");
+let writeStream = fs.createWriteStream(outputPath);
 let data = [];
 let output = "<dl class=\"myclass\">\n"; 
 parseStream.on("data", chunk => {
@@ -34,20 +34,16 @@ parseStream.on("data", chunk => {
         output += ` <dt>${k}</dt>\n <dd>${v}</dd>\n`;
     }
     output = output += "</dl>";
-    //writeStream.write(output)
+    writeStream.write(output);
+
 });
 
 parseStream.on("finish", () => {
+    writeStream.on('finish', () => {
+        console.log('wrote all data to file');
+    });
     //console.log(data);
     console.log(data.length);
-    console.log(output);
-    console.log(argv);
-    return output;
+    //console.log(output);
+    //console.log(argv);
 });
-
-
- 
-fs.writeFile(outputPath, output, function(err,result) {
-    if(err) console.log('error',err);
-    } 
-);
