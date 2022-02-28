@@ -15,13 +15,14 @@ const { argv } = require('process');
     }
  */
 // Input variables
-//const options = {/* options */}; papaparse option ignore first line
+//const options = {"header": true};  
 //const css-class = CSS class of definition list
-const inputPath = 'shortcsv.csv';
-const outputPath = 'html/dl-output.txt';
+const inputPath = 'error-codes.csv';
+const outputPath = 'html/error-codes.txt';
 
 const dataStream = fs.createReadStream(inputPath)
 const parseStream = Papa.parse(Papa.NODE_STREAM_INPUT);
+//const parseStream = Papa.parse(Papa.NODE_STREAM_INPUT, options);
 dataStream.pipe(parseStream);
 
 let writeStream = fs.createWriteStream(outputPath);
@@ -44,6 +45,6 @@ parseStream.on("finish", () => {
     });
     //console.log(data);
     console.log(data.length);
-    //console.log(output);
+    console.log(output);
     //console.log(argv);
 });

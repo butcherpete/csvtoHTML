@@ -5,6 +5,14 @@ const csv = require('csv');
 const inputPath = 'perspective-type.csv'
 
 
+fs.readFile(inputPath, (err, data) => {
+	if (err) {
+		throw err;
+	}
+	
+})
+
+
 // Run the pipeline
 fs.createReadStream(inputPath)
 

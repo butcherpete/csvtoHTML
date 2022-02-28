@@ -1,6 +1,6 @@
 //import fetch from "node-fetch";
 const fs = require('fs');
-const { iterInternalSymbol } = require('jsdom/lib/jsdom/living/generated/utils');
+//const { iterInternalSymbol } = require('jsdom/lib/jsdom/living/generated/utils');
 //const jsdom = require('jsdom');
 //const { iterInternalSymbol } = require('jsdom/lib/jsdom/living/generated/utils');
 //const { JSDOM } = jsdom;
@@ -16,8 +16,12 @@ stream.once('open', function(fd) {
 });
 
 
+
+
 function buildHtml(req) {
     var header = 'something';
+
+    let file = '';
 
     ul = Document.createElement('ul');
     Document.getElementById('myItemList').appendChild(ul);
