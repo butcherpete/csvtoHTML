@@ -1,65 +1,65 @@
-Code|Definition
-C0|Number of Total Casualties
-C1|Number of Medical Only Injuries
-C2|Number of Temporary Total Injuries
-C3|Number of Permanent Partial-minor Injuries
-C4|Number of Permanent Partial-major Injuries
-C5|Number of Permanent Total Injuries
-C6|Number of Fatalities
-CG|Injury Level Casualties
-CL|Client Loss
-DC|Distance to Centroid
-EL|Event Loss
-FA|Facultative Reinsurance Loss
-G1|Ground Up Loss - Primary Peril
-G2|Ground Up Loss - Secondary Peril
-GR|Gross Loss
-GS|Ground Up Specified Loss
-GU|Ground Up Loss
-I0|Ground Up Loss - Indemnity
-I1|Indemnity Losses - Medical Only
-I2|Indemnity Losses - Temporary Total
-I3|Indemnity Losses - Permanent Partial-minor
-I4|Indemnity Losses - Permanent Partial-major
-I5|Indemnity Losses - Permanent Total
-I6|Indemnity Losses - Fatalities
-IG|Injury Level Losses - Indemnity
-L1|Losses from Medical Only Injuries
-L2|Losses from Temporary Total Injuries
-L3|Losses from Permanent Partial-minor Injuries
-L4|Losses from Permanent Partial-major Injuries
-L5|Losses from Permanent Total Injuries
-L6|Losses from Fatalities
-LG|Injury Level Losses
-M0|Ground Up Loss - Medical
-M1|Medical Losses - Medical only
-M2|Medical Losses - Temporary Total
-M3|Medical Losses - Permanent Partial-minor
-M4|Medical Losses - Permanent Partial-major
-M5|Medical Losses - Permanent Total
-M6|Medical Losses - Fatalities
-MG|Injury Level Losses - Medical
-NL|Primary Insurer Net Loss
-NP|Total Number of People Analyzed
-OI|Other Insurer's Loss
-OL|Over Limit Loss
-PY|Payout Loss
-QS|Quota Share Treaty Loss
-RC|Net Loss Post Corporate Cat
-RG|Reinsurance Gross Loss
-RL|Net Loss Pre Cat
-RN|Reinsurance Net Loss
-RP|Net Loss Post Cat
-SS|Surplus Share Treaty Loss
-TE|Total Exposure
-TG|* %Share
-TN|* %Share * %Retent
-TV|Total Value
-TY|Treaty Loss
-UC|Underlying Coverage
-VA|Primary Underwriter Account View
-VL|Location View
-VP|Primary Insurance Portfolio View
-VT|Treaty Underwriter View
-VY|Policy View
-WX|Working Excess Treaty Loss
+Code,Definition
+C0,Number of Total Casualties
+C1,Number of Medical Only Injuries
+C2,Number of Temporary Total Injuries
+C3,Number of Permanent Partial-minor Injuries
+C4,Number of Permanent Partial-major Injuries
+C5,Number of Permanent Total Injuries
+C6,Number of Fatalities
+CG,Injury Level Casualties
+CL,Client Loss
+DC,Distance to Centroid
+EL,Event Loss
+FA,Facultative Reinsurance Loss
+G1,Ground Up Loss - Primary Peril
+G2,Ground Up Loss - Secondary Peril
+GR,Gross Loss
+GS,Ground Up Specified Loss
+GU,Ground Up Loss
+I0,Ground Up Loss - Indemnity
+I1,Indemnity Losses - Medical Only
+I2,Indemnity Losses - Temporary Total
+I3,Indemnity Losses - Permanent Partial-minor
+I4,Indemnity Losses - Permanent Partial-major
+I5,Indemnity Losses - Permanent Total
+I6,Indemnity Losses - Fatalities
+IG,Injury Level Losses - Indemnity
+L1,Losses from Medical Only Injuries
+L2,Losses from Temporary Total Injuries
+L3,Losses from Permanent Partial-minor Injuries
+L4,Losses from Permanent Partial-major Injuries
+L5,Losses from Permanent Total Injuries
+L6,Losses from Fatalities
+LG,Injury Level Losses
+M0,Ground Up Loss - Medical
+M1,Medical Losses - Medical only
+M2,Medical Losses - Temporary Total
+M3,Medical Losses - Permanent Partial-minor
+M4,Medical Losses - Permanent Partial-major
+M5,Medical Losses - Permanent Total
+M6,Medical Losses - Fatalities
+MG,Injury Level Losses - Medical
+NL,Primary Insurer Net Loss
+NP,Total Number of People Analyzed
+OI,Other Insurer's Loss
+OL,Over Limit Loss
+PY,Payout Loss
+QS,Quota Share Treaty Loss
+RC,Net Loss Post Corporate Cat
+RG,Reinsurance Gross Loss
+RL,Net Loss Pre Cat
+RN,Reinsurance Net Loss
+RP,Net Loss Post Cat
+SS,Surplus Share Treaty Loss
+TE,Total Exposure
+TG,* %Share
+TN,* %Share * %Retent
+TV,Total Value
+TY,Treaty Loss
+UC,Underlying Coverage
+VA,Primary Underwriter Account View
+VL,Location View
+VP,Primary Insurance Portfolio View
+VT,Treaty Underwriter View
+VY,Policy View
+WX,Working Excess Treaty Loss
