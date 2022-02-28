@@ -35,7 +35,7 @@ fs.createReadStream(inputPath)
         //console.log(headerRow)
         headerRows.push(headerRow);
         //console.log(headerRows)
-        return headers;
+        //return headers;
     })
     .on('data', (row) => {
         //console.log(row);
