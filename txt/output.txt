@@ -1,0 +1,262 @@
+<table>
+  <tr>
+    <th> ID </th>
+    <th> Definition</th>
+  </tr>
+  <tr>
+    <td> C0 </td>
+    <td> Number of Total Casualties</td>
+  </tr>
+  <tr>
+    <td> C1 </td>
+    <td> Number of Medical Only Injuries</td>
+  </tr>
+  <tr>
+    <td> C2 </td>
+    <td> Number of Temporary Total Injuries</td>
+  </tr>
+  <tr>
+    <td> C3 </td>
+    <td> Number of Permanent Partial-minor Injuries</td>
+  </tr>
+  <tr>
+    <td> C4 </td>
+    <td> Number of Permanent Partial-major Injuries</td>
+  </tr>
+  <tr>
+    <td> C5 </td>
+    <td> Number of Permanent Total Injuries</td>
+  </tr>
+  <tr>
+    <td> C6 </td>
+    <td> Number of Fatalities</td>
+  </tr>
+  <tr>
+    <td> CG </td>
+    <td> Injury Level Casualties</td>
+  </tr>
+  <tr>
+    <td> CL </td>
+    <td> Client Loss</td>
+  </tr>
+  <tr>
+    <td> DC </td>
+    <td> Distance to Centroid</td>
+  </tr>
+  <tr>
+    <td> EL </td>
+    <td> Event Loss</td>
+  </tr>
+  <tr>
+    <td> FA </td>
+    <td> Facultative Reinsurance Loss</td>
+  </tr>
+  <tr>
+    <td> G1 </td>
+    <td> Ground Up Loss - Primary Peril</td>
+  </tr>
+  <tr>
+    <td> G2 </td>
+    <td> Ground Up Loss - Secondary Peril</td>
+  </tr>
+  <tr>
+    <td> GR </td>
+    <td> Gross Loss</td>
+  </tr>
+  <tr>
+    <td> GS </td>
+    <td> Ground Up Specified Loss</td>
+  </tr>
+  <tr>
+    <td> GU </td>
+    <td> Ground Up Loss</td>
+  </tr>
+  <tr>
+    <td> I0 </td>
+    <td> Ground Up Loss - Indemnity</td>
+  </tr>
+  <tr>
+    <td> I1 </td>
+    <td> Indemnity Losses - Medical Only</td>
+  </tr>
+  <tr>
+    <td> I2 </td>
+    <td> Indemnity Losses - Temporary Total</td>
+  </tr>
+  <tr>
+    <td> I3 </td>
+    <td> Indemnity Losses - Permanent Partial-minor</td>
+  </tr>
+  <tr>
+    <td> I4 </td>
+    <td> Indemnity Losses - Permanent Partial-major</td>
+  </tr>
+  <tr>
+    <td> I5 </td>
+    <td> Indemnity Losses - Permanent Total</td>
+  </tr>
+  <tr>
+    <td> I6 </td>
+    <td> Indemnity Losses - Fatalities</td>
+  </tr>
+  <tr>
+    <td> IG </td>
+    <td> Injury Level Losses - Indemnity</td>
+  </tr>
+  <tr>
+    <td> L1 </td>
+    <td> Losses from Medical Only Injuries</td>
+  </tr>
+  <tr>
+    <td> L2 </td>
+    <td> Losses from Temporary Total Injuries</td>
+  </tr>
+  <tr>
+    <td> L3 </td>
+    <td> Losses from Permanent Partial-minor Injuries</td>
+  </tr>
+  <tr>
+    <td> L4 </td>
+    <td> Losses from Permanent Partial-major Injuries</td>
+  </tr>
+  <tr>
+    <td> L5 </td>
+    <td> Losses from Permanent Total Injuries</td>
+  </tr>
+  <tr>
+    <td> L6 </td>
+    <td> Losses from Fatalities</td>
+  </tr>
+  <tr>
+    <td> LG </td>
+    <td> Injury Level Losses</td>
+  </tr>
+  <tr>
+    <td> M0 </td>
+    <td> Ground Up Loss - Medical</td>
+  </tr>
+  <tr>
+    <td> M1 </td>
+    <td> Medical Losses - Medical only</td>
+  </tr>
+  <tr>
+    <td> M2 </td>
+    <td> Medical Losses - Temporary Total</td>
+  </tr>
+  <tr>
+    <td> M3 </td>
+    <td> Medical Losses - Permanent Partial-minor</td>
+  </tr>
+  <tr>
+    <td> M4 </td>
+    <td> Medical Losses - Permanent Partial-major</td>
+  </tr>
+  <tr>
+    <td> M5 </td>
+    <td> Medical Losses - Permanent Total</td>
+  </tr>
+  <tr>
+    <td> M6 </td>
+    <td> Medical Losses - Fatalities</td>
+  </tr>
+  <tr>
+    <td> MG </td>
+    <td> Injury Level Losses - Medical</td>
+  </tr>
+  <tr>
+    <td> NL </td>
+    <td> Primary Insurer Net Loss</td>
+  </tr>
+  <tr>
+    <td> NP </td>
+    <td> Total Number of People Analyzed</td>
+  </tr>
+  <tr>
+    <td> OI </td>
+    <td> Other Insurer's Loss</td>
+  </tr>
+  <tr>
+    <td> OL </td>
+    <td> Over Limit Loss</td>
+  </tr>
+  <tr>
+    <td> PY </td>
+    <td> Payout Loss</td>
+  </tr>
+  <tr>
+    <td> QS </td>
+    <td> Quota Share Treaty Loss</td>
+  </tr>
+  <tr>
+    <td> RC </td>
+    <td> Net Loss Post Corporate Cat</td>
+  </tr>
+  <tr>
+    <td> RG </td>
+    <td> Reinsurance Gross Loss</td>
+  </tr>
+  <tr>
+    <td> RL </td>
+    <td> Net Loss Pre Cat</td>
+  </tr>
+  <tr>
+    <td> RN </td>
+    <td> Reinsurance Net Loss</td>
+  </tr>
+  <tr>
+    <td> RP </td>
+    <td> Net Loss Post Cat</td>
+  </tr>
+  <tr>
+    <td> SS </td>
+    <td> Surplus Share Treaty Loss</td>
+  </tr>
+  <tr>
+    <td> TE </td>
+    <td> Total Exposure</td>
+  </tr>
+  <tr>
+    <td> TG </td>
+    <td> * %Share</td>
+  </tr>
+  <tr>
+    <td> TN </td>
+    <td> * %Share * %Retent</td>
+  </tr>
+  <tr>
+    <td> TV </td>
+    <td> Total Value</td>
+  </tr>
+  <tr>
+    <td> TY </td>
+    <td> Treaty Loss</td>
+  </tr>
+  <tr>
+    <td> UC </td>
+    <td> Underlying Coverage</td>
+  </tr>
+  <tr>
+    <td> VA </td>
+    <td> Primary Underwriter Account View</td>
+  </tr>
+  <tr>
+    <td> VL </td>
+    <td> Location View</td>
+  </tr>
+  <tr>
+    <td> VP </td>
+    <td> Primary Insurance Portfolio View</td>
+  </tr>
+  <tr>
+    <td> VT </td>
+    <td> Treaty Underwriter View</td>
+  </tr>
+  <tr>
+    <td> VY </td>
+    <td> Policy View</td>
+  </tr>
+  <tr>
+    <td> WX </td>
+    <td> Working Excess Treaty Loss</td>
+  </tr>
+</table>
