@@ -1,8 +1,12 @@
 {
   "name": "csvparser",
+  "type": "module",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "bin": {
+    "jsonp": "jsonp.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,6 +14,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "clamp-js-main": "^0.11.6",
+    "commander": "^9.0.0",
     "csv": "^6.0.5",
     "csv-parser": "^3.0.0",
     "csvtojson": "^2.0.10",
@@ -17,8 +23,12 @@
     "d3-fetch": "^3.0.1",
     "d3-node": "^2.2.3",
     "fs": "^0.0.1-security",
+    "html-prettify": "^1.0.5",
     "jsdom": "^19.0.0",
-    "node-fetch": "^3.2.0",
-    "papaparse": "^5.3.1"
+    "node-fetch": "^3.2.1",
+    "package.json": "^2.0.1",
+    "papaparse": "^5.3.1",
+    "pretty": "^2.0.0",
+    "random-words": "^1.1.2"
   }
 }

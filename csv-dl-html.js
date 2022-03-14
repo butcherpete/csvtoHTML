@@ -17,8 +17,8 @@ const { argv } = require('process');
 // Input variables
 //const options = {"header": true};  
 //const css-class = CSS class of definition list
-const inputPath = 'error-codes.csv';
-const outputPath = 'html/error-codes.txt';
+const inputPath = 'perspective-type.csv';
+const outputPath = 'html/perspectives.txt';
 
 const dataStream = fs.createReadStream(inputPath)
 const parseStream = Papa.parse(Papa.NODE_STREAM_INPUT);
