@@ -1,15 +1,19 @@
 import * as fs from 'fs';
-import * as csv from 'csv-parser';
-import * as pretty from 'pretty';
+import csv from 'csv-parser'; 
+import pretty from 'pretty';
 
 
-const inputPath = 'csv/perspective-type.csv'
-const outputPath = 'table/perspectives.htm';
 
 const tableRows = [];
 const tableHeaders =  [];
 
 export function table_parse(input, output, options){
+
+  const inputPath = input;
+	const outputPath = output;
+	const tableRows = [];
+	const tableHeaders =  [];
+	const cliParameters = options;
 
 	fs.createReadStream(inputPath)
 	  .pipe(csv())
@@ -51,6 +55,7 @@ export function table_parse(input, output, options){
 	      } else {
 	        console.log(`saved as ${filename}`);
 	        console.log(html);
+          console.log(cliParameters);
 	      }
 	    });
 	  }
