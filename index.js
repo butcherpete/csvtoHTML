@@ -8,13 +8,7 @@ import {getFilename,createOutputPath} from './utils/utils.js';
 //import tables from "./commands/tables.js";
 //import convert from "./commands/convert.js";
 //import info from "./commands/info.js";
-// Enable ds to write folders if they do not exist. https://stackoverflow.com/questions/21194934/how-to-create-a-directory-if-it-doesnt-exist-using-node-js
-// Fix hyphented command names per tutorial
-// Update initial varaibles 
-// Add wrapper HTML to HTML output
-// Add preview server
-// Add ignore file for node_modulesgit
-// Move this to github 
+// Update initial variables 
 
 const program = new Command();
 let inputFile = '';
