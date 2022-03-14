@@ -15,7 +15,7 @@ import {getFilename,createOutputPath} from './utils/utils.js';
 // Update initial varaibles 
 // Add wrapper HTML to HTML output
 // Add preview server
-// Add ignore file for node_modules
+// Add ignore file for node_modulesgit
 
 const program = new Command();
 let inputFile = '';
@@ -29,7 +29,7 @@ program.addHelpCommand(true);
 program.helpOption(true);
  
 program
-  .command("dls")
+  .command("dl")
   .argument("<inputFile>", "Specify path to flatfile. For example, 'data.csv', 'data.csv'")
   .option('-o, --outputFile [value]', 'option with a default value', 'defaultPath')
   .option("-b --browser", "Serve HTML to browser using specified CSS")
