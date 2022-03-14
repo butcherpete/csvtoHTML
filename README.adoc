@@ -1,0 +1,26 @@
+= CSVParser
+
+Node CLI built on top of csv-parser.
+
+== CLI
+----
+Usage: csvtohelp <command><file><options>
+
+Arguments:
+  inputFile                               Specify a path to a flatfile. For example, 'data.csv'
+
+Options:
+  -c, --css <class>                       Specify CSS class of HTML <table>. By default, "header" (i.e. <table class="term". CSS includes "noHeader" (default:
+                                          "header")
+  -d, --delimiter <character>             Identify the delimiter in the InputFile. One of ',' (comma), ';' (semi-colon), or '|' (pipe). If unspecified, ','
+  -e, --excludeHeader                     Exclude the first row in the inputFile. First row is included by default. Use "noHeader" CSS style if specified. (default:
+                                          false)
+  -h, --help                              display help for command
+  -n, --includeColumns [columnNumber...]  Specify data columns to include in the table. For example, [1,2,5,7]. Maximum of five columns.  By default, first five
+                                          columns are returned
+  -o, --outputFile [value]                option with a default value (default: "defaultPath")
+  -p --preview                            Serve HTML to browser using specified CSS (default: false)
+  -r, --replaceHeaders [columnName...]    Replace InputFile column headers with desired table column headers. Specify an array of comma-separated headers.
+  -sk, --skipComments                     Ignore commented lines in inputFile. Commented lines begin with the "#" character. (default: false)
+  -sl, --skipLines <number>               Skip the specified number of lines at the begining of inputFile
+	----
