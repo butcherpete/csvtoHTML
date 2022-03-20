@@ -29,7 +29,7 @@ export function dl_parse(input, output, options){
 	    })
 	
 	  .on('end', function () {
-	    const tableStart = '<dl class=\'code-defs\'>';
+	    const tableStart = `<dl class='${options.css}'>`;
 	    const tableEnd = '</dl>';
 	
 	    //let tableRows = JSON.stringify(null, '\n');
