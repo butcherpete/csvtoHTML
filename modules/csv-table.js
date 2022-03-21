@@ -1,9 +1,7 @@
 import * as fs from 'fs';
 import csv from 'csv-parser'; 
 import pretty from 'pretty';
-import {createHeaderString} from '../utils/utils.js';
-
-
+import {createHeaderString, createRowString} from '../utils/utils.js';
 
 const tableRows = [];
 const tableHeaders =  [];
@@ -15,8 +13,10 @@ export function table_parse(input, output, options){
 	const tableRows = [];
 	const tableHeaders =  [];
 	const cliParameters = options;
+	let columnIds;
 	let firstColumn;
 	let secondColumn;
+	
 
 
 	fs.createReadStream(inputPath)
@@ -26,45 +26,23 @@ export function table_parse(input, output, options){
 	  })
 	
 	.on('headers',(headers) =>{
-		let names = createHeaderString(options,headers);
-		console.log('\n WE ARE BACK IN CSV-TABLE:');
-		console.log('\nThis is the header string returned to the main function:');
-		console.log(names.headerString);
-		console.log('\nThese variables should represent e.g. column0 = headers[0] or column0 = options.replaceHeaders[0]:')
-		console.table(names.resultHeader);  
-
-		// MUST DEFINE VARIABLES THAT REPRESENT EACH ELEMENT IN THE options.representHeader[x];
-		// THE VARIABLE HOLDS THIS VALUE; USED TO SPECIFY THE VALUES OF ROWS IN DATA FUNCTION
-
-/* 		let headerString = '';
-		if (options.hasOwnProperty('replaceHeaders')) {
-			headerString = `<tr><th> ${options.replaceHeaders[0]} </th><th> ${options.replaceHeaders[1]}</th></tr>`;
-			firstColumn = options.replaceHeaders[0];
-			secondColumn = options.replaceHeaders[1];
-		} else {
-			headerString = `<tr><th> ${headers[0]} </th><th> ${headers[1]}</th></tr>`
-			firstColumn = headers[0];
-			secondColumn = headers[1];
-		};
- */
-		// Define header variable for  headerString
-		let header = names.headerString;
-		// Add headerString to table headers array
-	    tableHeaders.push(header);
+		let names = createHeaderString(options,headers); //Create headers based on 
+		let header = names.headerString; 
+	    tableHeaders.push(header);  // Add headerString to table headers array
+		columnIds = names.resultHeader;
+		console.log('The array of headers is available:')
+		console.table(columnIds);
 	})
 	
 	  .on('data', function (row) {
-		//console.log(row[headers[0]]);
-		//row.forEach(element => console.log(element));
+		console.log('The array of headers are available in data:')
+		console.table(columnIds);
 
-	    // Need function to count number of elements in array (replaceHeaders or headers) and write a row string for each
-		// number matches the number of elements in the array.  This string defines the rowString
-		// let length = headers.length
-
-		//FOR EACH ELEMENT IN NAMES.COLUMNHEADERS
-		// PASS THE VARIABLE (EG COLUMN0)
-		let rowString = `<tr><td> ${row[firstColumn]} </td><td> ${row[secondColumn]}</td></tr>`;
-	    let rows =  rowString;
+		let names = createRowString(columnIds); 
+		//let rowString = `<tr><td> ${row[firstColumn]} </td><td> ${row[secondColumn]}</td></tr>`;
+		console.log('\nReturned the rowstring:')
+		console.log(names.rowString);
+		let rows = names.rowString;
 	    tableRows.push(rows);   
 	    })
 	

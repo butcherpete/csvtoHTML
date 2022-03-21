@@ -41,7 +41,6 @@ export function createHeaderString(options,headers){
     //console.table(options.replaceHeaders);
 
     let opLength = headers.length;
-    let rpLength = options.replaceHeaders.length;
     let headerString = [];
     let columnString = '';
     let headerColumn = '';
@@ -53,11 +52,11 @@ export function createHeaderString(options,headers){
 
     // Check if replacement headers are defined
 	if (options.hasOwnProperty('replaceHeaders')) {
+        let rpLength = options.replaceHeaders.length;
 
         console.log('\n We have the same number of headers in the CLI and CSV.');
         console.log('We will use replaceHeaders to define the column headers:');
         console.table(options.replaceHeaders);
-
 
         // if # of replacement headers equals column headers
         if (opLength == rpLength) {
@@ -102,6 +101,7 @@ export function createHeaderString(options,headers){
             };
     } else {
         // Use the column headers in the CSV file to define headerString and columnHeaders
+        //let csvHeaders;
 
         for (let i = 0; i < headers.length; i++) {
             //Create array of column variables, one for each element
@@ -112,11 +112,47 @@ export function createHeaderString(options,headers){
 
             //Define headerString
             //Write string frag for each element
-            columnString = `<tr><th>${options.replaceHeaders[i]}</th>`;
+            columnString = `<tr><th>${headers[i]}</th>`;
             //Add string frag to the complete string
-            headerString.push(columnString);
+            headerString += columnString;
         }
-        //return headerString, columnHeaders;
+        console.log('Where am i?')
+        console.table(headers);
+        //csvHeaders = headers;
+        //console.table(csvHeaders);
+
+        let resultHeader = Object.fromEntries(
+            columnHeaders.map((array1value, index) => [array1value, headers[index]])
+            );
+        headerString += '</tr>';
+        //console.log('\n This is the headerString outside the loop:')
+        //console.log(headerString);
+        return {resultHeader, headerString};
     }
-    //return headerString, columnHeaders;     
-};
+
+}
+
+//Create row string
+export function createRowString(columnIds){
+    let rowString = '<tr>';
+    let columnString = '';
+    console.log('The array of headers are available in utils:')
+	console.table(columnIds);
+    //let Length = columnIds.length;
+
+    //console.log(typeof columnIds);
+
+    for (const [key, value] of Object.entries(columnIds)) {
+        //console.log('key-value pairs:');
+        //console.log(`${key}: ${value}`);
+        columnString = `<td>row["${value}"]</td>`
+        //console.log(columnString);
+        rowString += columnString;
+        //console.log(rowString);
+    }
+
+
+    rowString += '</tr>';
+    console.log(rowString);
+    return {rowString};
+}
