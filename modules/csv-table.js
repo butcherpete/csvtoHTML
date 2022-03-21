@@ -1,6 +1,7 @@
 import * as fs from 'fs';
 import csv from 'csv-parser'; 
 import pretty from 'pretty';
+import {createHeaderString} from '../utils/utils.js';
 
 
 
@@ -17,23 +18,22 @@ export function table_parse(input, output, options){
 	let firstColumn;
 	let secondColumn;
 
+
 	fs.createReadStream(inputPath)
 	  .pipe(csv()) //
 	  .on('error', () => {
 	  // handle error 
 	  })
 	
-	  .on('headers',(headers) =>{
+	.on('headers',(headers) =>{
+		let names = createHeaderString(options,headers);
+		console.log('\n WE ARE BACK IN CSV-TABLE:');
+		console.log('\nthis is the header string returned to the main function:');
+		console.log(names.headerString2);
+		console.log('\nthis is the array  returned to the main function:');
+		console.table(names.columnHeaders2);  
 
-		let exists = options.hasOwnProperty('escape');
-		console.log(exists);
-		
-		let headerString = '';
-
-		// Need function to count number of elements in array (replaceHeaders or headers) and write a string for each
-		// number that accounts for each number of elements in the array.  This string defines the headerString
-		// let length = headers.length
-
+/* 		let headerString = '';
 		if (options.hasOwnProperty('replaceHeaders')) {
 			headerString = `<tr><th> ${options.replaceHeaders[0]} </th><th> ${options.replaceHeaders[1]}</th></tr>`;
 			firstColumn = options.replaceHeaders[0];
@@ -43,21 +43,12 @@ export function table_parse(input, output, options){
 			firstColumn = headers[0];
 			secondColumn = headers[1];
 		};
-
-		//console.table(headers);
-		//let length = headers.length;
-		//console.log(length);
-		//let inputLength = options.replaceHeaders.length;
-		//console.log(inputLength);
-		//headers.forEach(element => console.log(element));
-		//options.replaceHeaders.forEach(element => console.log(element));
-	    //console.log(`First header: ${headers[0]} and Second header: ${headers[1]}`)
-	    //let header = `<tr><th> ${headers[0]} </th><th> ${headers[1]}</th></tr>`;
-		//let header = `<tr><th> ${options.replaceHeaders[0]} </th><th> ${options.replaceHeaders[1]}</th></tr>`;
-
-		let header = headerString;
+ */
+		// Define header variable for  headerString
+		let header = names.headerString2;
+		// Add headerString to table headers array
 	    tableHeaders.push(header);
-	    })
+	})
 	
 	  .on('data', function (row) {
 		//console.log(row[headers[0]]);
