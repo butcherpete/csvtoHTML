@@ -3,6 +3,7 @@ import * as fs from 'fs';
 import csv from 'csv-parser'; 
 //import csv = require('csv-parser');
 import pretty from 'pretty';
+import {throwsColumnError} from '../utils/utils.js';
 
 //const inputPath = 'csv/job-types.csv'
 //const outputPath = 'dl/job-types.txt';
@@ -16,6 +17,8 @@ export function dl_parse(input, output, options){
 	const tableRows = [];
 	const tableHeaders =  [];
 	const cliParameters = options;
+	let firstColumn;
+	let secondColumn;
 	
 	fs.createReadStream(inputPath)
 	  .pipe(csv())
@@ -23,8 +26,21 @@ export function dl_parse(input, output, options){
 	  // handle error 
 	  })
 	
+	  .on('headers',(headers) =>{
+		let headerLength = headers.length;
+		if (headerLength == 2) {
+			console.log('CSV contains two columns of data!');
+			firstColumn = headers[0];
+			secondColumn = headers[1];
+		} else {
+			throw new throwsColumnError(headerLength);
+			//console.log('CSV must contain only two columns of data');
+			}
+	  })
+
 	  .on('data', function (row) {
-	    let rows = `<div class='row-group'><dt><code> ${row["ID"]} </code></dt><dd> ${row["Definition"]}</dd></div>`;
+	    //let rows = `<div class='row-group'><dt><code> ${row["ID"]} </code></dt><dd> ${row["Definition"]}</dd></div>`;
+		let rows = `<div class='row-group'><dt><code> ${row[firstColumn]} </code></dt><dd> ${row[secondColumn]}</dd></div>`;
 	    tableRows.push(rows); 
 	    })
 	

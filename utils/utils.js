@@ -18,6 +18,15 @@ export function createOutputPath(inputPath, userCommand, outputPath){
     return defaultOutputPath;
 }
 
+//Throws column length error
+export function throwsColumnError(value) {
+    this.value = value;
+    this.message = `The CSV inputFile contains ${value} columns of data. Two columns are required for DL conversions.`;
+    this.toString = function() {
+      return this.value + this.message;
+    };
+  }
+
 
 // Creates headerString
 export function createHeaderString(options,headers){
@@ -25,21 +34,18 @@ export function createHeaderString(options,headers){
     //let myheaderString = '';
     //let myfirstColumn;
     //let mysecondColumn;
-    console.log('\n WE ARE IN THE UTILITY FUNCTION:');
-    console.log('These are the headers from the CSV file:');
-
-    console.table(headers);
-    console.log('These are the replacement headers from the CLI:');
-    console.table(options.replaceHeaders);
-
+    //console.log('\n WE ARE IN THE UTILITY FUNCTION:');
+    //console.log('These are the headers from the CSV file:');
+    //console.table(headers);
+    //console.log('These are the replacement headers from the CLI:');
+    //console.table(options.replaceHeaders);
 
     let opLength = headers.length;
     let rpLength = options.replaceHeaders.length;
-    let headerString2 = [];
-    let columnString2 = '';
-    let headerColumn2 = '';
-    let columnHeaders2 = [];
-
+    let headerString = [];
+    let columnString = '';
+    let headerColumn = '';
+    let columnHeaders = [];
 
     // Need function to count number of elements in array (replaceHeaders or headers) and write a string for each
 	// number that accounts for each number of elements in the array.  This string defines the headerString
@@ -49,42 +55,42 @@ export function createHeaderString(options,headers){
 	if (options.hasOwnProperty('replaceHeaders')) {
 
         console.log('\n We have the same number of headers in the CLI and CSV.');
-
+        console.log('We will use replaceHeaders to define the column headers:');
+        console.table(options.replaceHeaders);
 
 
         // if # of replacement headers equals column headers
         if (opLength == rpLength) {
-            let headerString2 = '';
-            let columnString2 = '';
-            let headerColumn2 = '';
-            let columnHeaders2 = [];
-            console.log('\nArrays have the same number of elements.');
-            //Send each replaceHeaders column to function
+            let headerString = '';
+            let columnString = '';
+            let headerColumn = '';
+            let columnHeaders = [];
 
             for (let i = 0; i < options.replaceHeaders.length; i++) {
                 //Define array of column headings
-                headerColumn2 = `column${i}`;
-                let headerValue = options.replaceHeaders[i];
-                console.log('\n Access header values:');
-                console.log(headerValue);
-                console.log('The value of the columns passed:');
-                // I think I need to map headerColumn2 and headerValue
-                console.log(headerColumn2);
-                columnHeaders2.push(headerColumn2);
-                //console.table(columnHeaders2);
-
+                headerColumn = `column${i}`;
+                columnHeaders.push(headerColumn);
                 //Define headerString
-                columnString2 = `<tr><th>${options.replaceHeaders[i]}</th>`;
-                headerString2 += columnString2;
-
+                columnString = `<tr><th>${options.replaceHeaders[i]}</th>`;
+                headerString += columnString;
             }
+
             console.log('\n This is the array of column headers:')
-            console.table(columnHeaders2);
-            headerString2 += '</tr>';
-            console.log('\n This is the headerString outside the loop:')
-            console.log(headerString2);
-            return {columnHeaders2, headerString2};
-            
+            console.table(columnHeaders);
+            console.log('This is the array of column headers:')
+            let replacementHeaders = options.replaceHeaders;
+            console.table(replacementHeaders);
+
+            const resultHeader = Object.fromEntries(
+                columnHeaders.map((array1value, index) => [array1value, replacementHeaders[index]])
+            );
+            console.log('\nWell this is what you get:');
+            console.table(resultHeader);
+
+            headerString += '</tr>';
+            //console.log('\n This is the headerString outside the loop:')
+            //console.log(headerString);
+            return {resultHeader, headerString};
 
         } else {
             // Return error because replacement headers do not match number of column headers
@@ -100,17 +106,17 @@ export function createHeaderString(options,headers){
         for (let i = 0; i < headers.length; i++) {
             //Create array of column variables, one for each element
             // Create a variable for each element
-            headerColumn2 = `column${i}`;
+            headerColumn = `column${i}`;
             //Add variable to an array
-            columnHeaders2.push(headerColumn2);
+            columnHeaders.push(headerColumn);
 
             //Define headerString
             //Write string frag for each element
-            columnString2 = `<tr><th>${options.replaceHeaders[i]}</th>`;
+            columnString = `<tr><th>${options.replaceHeaders[i]}</th>`;
             //Add string frag to the complete string
-            headerString2.push(columnString2);
+            headerString.push(columnString);
         }
-        //return headerString2, columnHeaders2;
+        //return headerString, columnHeaders;
     }
-    //return headerString2, columnHeaders2;     
+    //return headerString, columnHeaders;     
 };

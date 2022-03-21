@@ -28,11 +28,10 @@ export function table_parse(input, output, options){
 	.on('headers',(headers) =>{
 		let names = createHeaderString(options,headers);
 		console.log('\n WE ARE BACK IN CSV-TABLE:');
-		console.log('\nthis is the header string returned to the main function:');
-		console.log(names.headerString2);
-		console.log('\nthis is the array  returned to the main function:');
-		console.log('\n These variables should represent e.g. column0 = headers[0] or column0 = options.replaceHeaders[0]:')
-		console.table(names.columnHeaders2);  
+		console.log('\nThis is the header string returned to the main function:');
+		console.log(names.headerString);
+		console.log('\nThese variables should represent e.g. column0 = headers[0] or column0 = options.replaceHeaders[0]:')
+		console.table(names.resultHeader);  
 
 		// MUST DEFINE VARIABLES THAT REPRESENT EACH ELEMENT IN THE options.representHeader[x];
 		// THE VARIABLE HOLDS THIS VALUE; USED TO SPECIFY THE VALUES OF ROWS IN DATA FUNCTION
@@ -49,7 +48,7 @@ export function table_parse(input, output, options){
 		};
  */
 		// Define header variable for  headerString
-		let header = names.headerString2;
+		let header = names.headerString;
 		// Add headerString to table headers array
 	    tableHeaders.push(header);
 	})
@@ -62,7 +61,7 @@ export function table_parse(input, output, options){
 		// number matches the number of elements in the array.  This string defines the rowString
 		// let length = headers.length
 
-		//FOR EACH ELEMENT IN NAMES.COLUMNHEADERS2
+		//FOR EACH ELEMENT IN NAMES.COLUMNHEADERS
 		// PASS THE VARIABLE (EG COLUMN0)
 		let rowString = `<tr><td> ${row[firstColumn]} </td><td> ${row[secondColumn]}</td></tr>`;
 	    let rows =  rowString;
