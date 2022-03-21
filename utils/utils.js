@@ -64,8 +64,12 @@ export function createHeaderString(options,headers){
             for (let i = 0; i < options.replaceHeaders.length; i++) {
                 //Define array of column headings
                 headerColumn2 = `column${i}`;
-                //console.log('The value of the columns passed:');
-                //console.log(headerColumn2);
+                let headerValue = options.replaceHeaders[i];
+                console.log('\n Access header values:');
+                console.log(headerValue);
+                console.log('The value of the columns passed:');
+                // I think I need to map headerColumn2 and headerValue
+                console.log(headerColumn2);
                 columnHeaders2.push(headerColumn2);
                 //console.table(columnHeaders2);
 

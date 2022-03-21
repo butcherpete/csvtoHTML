@@ -31,7 +31,11 @@ export function table_parse(input, output, options){
 		console.log('\nthis is the header string returned to the main function:');
 		console.log(names.headerString2);
 		console.log('\nthis is the array  returned to the main function:');
+		console.log('\n These variables should represent e.g. column0 = headers[0] or column0 = options.replaceHeaders[0]:')
 		console.table(names.columnHeaders2);  
+
+		// MUST DEFINE VARIABLES THAT REPRESENT EACH ELEMENT IN THE options.representHeader[x];
+		// THE VARIABLE HOLDS THIS VALUE; USED TO SPECIFY THE VALUES OF ROWS IN DATA FUNCTION
 
 /* 		let headerString = '';
 		if (options.hasOwnProperty('replaceHeaders')) {
@@ -58,6 +62,8 @@ export function table_parse(input, output, options){
 		// number matches the number of elements in the array.  This string defines the rowString
 		// let length = headers.length
 
+		//FOR EACH ELEMENT IN NAMES.COLUMNHEADERS2
+		// PASS THE VARIABLE (EG COLUMN0)
 		let rowString = `<tr><td> ${row[firstColumn]} </td><td> ${row[secondColumn]}</td></tr>`;
 	    let rows =  rowString;
 	    tableRows.push(rows);   
