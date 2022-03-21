@@ -1,6 +1,9 @@
-= CSVParser
+= CSVtoHTML
 
-Node CLI built on top of csv-parser.
+ A Node CLI that converts CSV data to HTML tables or definition lists.
+
+ * `table` command enables renaming of headers, selecting of CSV columns, and applying CSS class.
+ * `dl`` command automatically excludes column headers and enables applying CSS class.
 
 == CLI
 ----
